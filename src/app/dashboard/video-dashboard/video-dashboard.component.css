@@ -1,0 +1,22 @@
+body {
+  font-family: 'Roboto';
+}
+
+h1 {
+  font-family: 'Roboto Condensed';
+  margin-top: 70px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.box {
+  width: 300px;
+  margin: 0 10px;
+  padding: 30px;
+  display: inline-block;
+  background-color: blueviolet;
+}
