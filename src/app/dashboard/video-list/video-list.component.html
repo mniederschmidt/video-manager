@@ -1,3 +1,8 @@
-<p>
-  video-list works!
-</p>
+<div class="list">
+  <div class="list-title">Videos</div>
+  <ul class="video-collection" style="height: 200px; overflow-y: auto">
+    <li class="video-item" *ngFor="let video of videos">
+      {{video.title}} - {{video.author}}
+    </li>
+  </ul>
+</div>
