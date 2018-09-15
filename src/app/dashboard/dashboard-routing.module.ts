@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { VideoDashboardComponent } from './video-dashboard/video-dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: VideoDashboardComponent }
+  { path: '', component: VideoDashboardComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
