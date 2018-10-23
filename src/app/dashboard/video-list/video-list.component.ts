@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Video } from '../../types';
-import { VideoLoaderService } from '../../video-loader.service';
 
 @Component({
   selector: 'vm-video-list',
@@ -10,21 +9,20 @@ import { VideoLoaderService } from '../../video-loader.service';
 })
 
 export class VideoListComponent implements OnInit {
-  videos: Observable<Video[]>;
+  // @Input() videos: Video[];
+  @Input() videos: Observable<Video[]>;
+
   selectedVideoId: string | undefined;
 
-  constructor(svc: VideoLoaderService) {
-    // this next line returns an observable - subscribe with async pipe
-    this.videos = svc.loadVideos();
-    // svc.loadVideos()
-    //   .subscribe((data: videos => this.videos = videos);
-  }
+  constructor() {}
 
   ngOnInit() {
   }
 
   pickVideo(video: any) {
+    console.log('*** pickVideo - video = ', video);
     this.selectedVideoId = video.id;
+    console.log('this.selectedVideoId: ', this.selectedVideoId);
   }
 
 }
