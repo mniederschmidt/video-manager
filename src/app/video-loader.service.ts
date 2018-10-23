@@ -2,22 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { Video } from './types';
 
 const API_URL = 'https://api.angularbootcamp.com';
-
-export interface Video {
-  title: string;
-  author: string;
-  id: string;
-  viewDetails: ViewDetail[];
-}
-
-// I'm not totally sure this next one needs to be exported as well (?)
-export interface ViewDetail {
-  age: number;
-  region: string;
-  date: string;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +17,15 @@ export class VideoLoaderService {
     return this.http
       .get<Video[]>(API_URL + '/videos')
       .pipe(
-        map(videos => videos.slice(0, 3)),
+        // map(videos => videos.slice(0, 3)),
+        map(videos => videos.map(video => {
+          // video.title = video.title.toUpperCase();
+          // return video;
+          return {
+            ...video,
+            title: video.title.toUpperCase()
+          };
+        })),
         tap(videos => console.log('videos: ', videos))
       );
   }
