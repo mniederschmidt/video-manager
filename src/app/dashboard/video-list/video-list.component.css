@@ -1,7 +1,3 @@
-.title {
-  font-weight: bold;
-}
-
-.selected span {
-  color: red;
+.selected {
+  color: white;
 }
