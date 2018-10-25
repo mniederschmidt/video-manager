@@ -2,7 +2,7 @@
   <div class="list-title">Videos</div>
   <ul class="video-collection" style="height: 200px; overflow-y: auto">
     <li class="video-item" *ngFor="let video of (videos | async)" [class.selected]="video.id === selectedVideoId" (click)="pickVideo(video)">
-      <vm-video [video]=video></vm-video>
+      <vm-video [video]="video"></vm-video>
     </li>
   </ul>
 </div>
