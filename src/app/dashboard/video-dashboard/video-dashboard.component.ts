@@ -11,6 +11,7 @@ import { VideoLoaderService } from '../../video-loader.service';
 })
 export class VideoDashboardComponent implements OnInit {
   videos: Observable<Video[]>;
+  selectedVideo: Video;
 
   constructor(svc: VideoLoaderService) {
     // this next line returns an observable - subscribe with
@@ -20,6 +21,11 @@ export class VideoDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  selectVideo(video: Video) {
+    console.log('selected video: ', video);
+    this.selectedVideo = video;
   }
 
 }

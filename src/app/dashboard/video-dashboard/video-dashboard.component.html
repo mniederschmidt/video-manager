@@ -1,9 +1,12 @@
 <div class="container">
   <div class="box">
-    <vm-video-list [videos]="videos"></vm-video-list>
+    <vm-video-list
+      (selectVideo)="selectVideo($event)"
+      [videos]="videos">
+    </vm-video-list>
   </div>
   <div class="box">
-    <vm-video-player></vm-video-player>
+    <vm-video-player [video]="selectedVideo"></vm-video-player>
   </div>
   <div class="box">
     <vm-stat-filters></vm-stat-filters>
