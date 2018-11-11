@@ -2,7 +2,7 @@
   <div class="box">
     <vm-video-list
       (selectVideo)="selectVideo($event)"
-      [videos]="videos">
+      [videos]="videos | async">
     </vm-video-list>
   </div>
   <div class="box">
