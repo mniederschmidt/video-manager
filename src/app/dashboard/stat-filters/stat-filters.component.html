@@ -1,3 +1,38 @@
-<p>
-  stat-filters works!
-</p>
+<div class="add-video">
+<section class="card">
+  <div class="card-content">
+    <div class="card-title">Add Video</div>
+    <form [formGroup]="details" (ngSubmit)="saveEmployeeDetails()">
+      <div class="three-across">
+        <div>
+          <label for="title">Title</label>
+          <input id="title" type="text" formControlName="title">
+          <div *ngIf="details.get('title')?.hasError('required') && details.get('title')?.touched">
+            Please enter title
+          </div>
+        </div>
+        <div>
+          <label for="author">Author</label>
+          <input id="author" type="text" formControlName="author">
+          <div *ngIf="details.get('author')?.hasError('required') && details.get('author')?.touched">
+            Please enter author
+          </div>
+        </div>
+      </div>
+      <button class="btn" [disabled]="!details.valid" [class.disabled]="!details.valid">Save</button>
+    </form>
+  </div>
+</section>
+
+<section class="card">
+  <div class="card-content">
+    <div class="card-title">Form Data</div>
+
+    Form Value Object:
+    <pre>{{ details.value | json }}</pre> Form Validity:
+    <div>{{ details.valid }}</div>
+
+    <button class="btn" (click)="logTheForm()">Log Form Object</button>
+  </div>
+</section>
+</div>

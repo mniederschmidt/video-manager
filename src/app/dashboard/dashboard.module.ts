@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -11,6 +12,7 @@ import { StatFiltersComponent } from './stat-filters/stat-filters.component';
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     DashboardRoutingModule
   ],
   declarations: [

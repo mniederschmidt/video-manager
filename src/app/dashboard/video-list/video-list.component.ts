@@ -9,10 +9,10 @@ import { Video } from '../../types';
 })
 
 export class VideoListComponent implements OnInit {
-  @Input() videos: Video[] ;
+  @Input() videos: Video[];
   @Output() selectVideo = new EventEmitter<Video>();
 
-  selectedVideoId: string | undefined;
+  selectedVideoId: string;
 
   constructor() {}
 
